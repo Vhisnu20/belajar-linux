@@ -2,6 +2,7 @@
 # Show basic server info and check services
 
 echo "===== Server Info ====="
+echo "Checked at: $(date '+%Y-%m-%d %H:%M:%S')"
 echo "Hostname : $(hostname)"
 echo "IP       : $(hostname -I)"
 echo "Uptime   : $(uptime -p)"
@@ -20,4 +21,3 @@ for SERVICE in nginx ssh cron; do
         echo "WARNING: $SERVICE is $STATUS"
     fi
 done
-echo "Checked at: $(date '+%Y-%m-%d %H:%M:%S')"
