@@ -6,6 +6,7 @@ echo "Checked at: $(date '+%Y-%m-%d %H:%M:%S')"
 echo "Hostname : $(hostname)"
 echo "IP       : $(hostname -I)"
 echo "Uptime   : $(uptime -p)"
+echo "Kernel   : $(uname -r)"
 echo "Disk     :"
 df -h /
 echo "Memory   :"
