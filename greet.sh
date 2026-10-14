@@ -5,3 +5,4 @@ if [ "$name" == "" ]; then
   exit 1
 fi
 echo "Hello $name"
+echo $UNDEFINED_VAR
