@@ -1,0 +1,19 @@
+name: ShellCheck
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v5
+
+      - name: Show ShellCheck version
+        run: shellcheck --version
+
+      - name: Run ShellCheck
+        run: shellcheck *.sh
