@@ -8,8 +8,7 @@ echo "IP       : $(hostname -I)"
 echo "Uptime   : $(uptime -p)"
 echo "Kernel   : $(uname -r)"
 echo "Disk     : $(df -h --output=pcent / | tail -1 | tr -d ' ') used"
-echo "Memory   :"
-free -h
+echo "Memory   : $(free -h | awk '/^Mem:/ {print $3 " / " $2}') used"
 
 echo "===== Service Check ====="
 FAILED=0
