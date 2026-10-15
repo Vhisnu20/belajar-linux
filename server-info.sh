@@ -12,12 +12,19 @@ echo "Memory   :"
 free -h
 
 echo "===== Service Check ====="
+FAILED=0
+
 for SERVICE in nginx ssh cron; do
-    STATUS=$(systemctl is-active $SERVICE)
+    STATUS=$(systemctl is-active "$SERVICE")
 
     if [ "$STATUS" = "active" ]; then
         echo "OK: $SERVICE is running"
     else
         echo "WARNING: $SERVICE is $STATUS"
+        FAILED=1
     fi
 done
+
+if [ "$FAILED" -eq 1 ]; then
+    exit 1
+fi
