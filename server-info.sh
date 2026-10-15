@@ -7,7 +7,7 @@ echo "Hostname : $(hostname)"
 echo "IP       : $(hostname -I)"
 echo "Uptime   : $(uptime -p)"
 echo "Kernel   : $(uname -r)"
-echo "Disk     : $(df -h --output=pcent / | tail -1) used"
+echo "Disk     : $(df -h --output=pcent / | tail -1 | tr -d ' ') used"
 echo "Memory   :"
 free -h
 
