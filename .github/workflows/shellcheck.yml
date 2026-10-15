@@ -16,4 +16,13 @@ jobs:
         run: shellcheck --version
 
       - name: Run ShellCheck
-        run: shellcheck *.sh
+        run: shellcheck *.sh tests/*.sh
+
+test:
+  runs-on: ubuntu-24.04
+  steps:
+    - name: Checkout code
+      uses: actions/checkout@v5
+
+    - name: Run tests
+      run: ./tests/test-greet.sh
